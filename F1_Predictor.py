@@ -73,66 +73,66 @@ def get_current_driver_teams():
     """Get current F1 driver lineup for 2025"""
     return {
         'Max Verstappen': 'Red Bull Racing',
-        'Sergio Perez': 'Red Bull Racing',
+        'Liam Lawson': 'Red Bull Racing',
         'Charles Leclerc': 'Ferrari',
-        'Carlos Sainz': 'Ferrari',
-        'Lewis Hamilton': 'Mercedes',
+        'Lewis Hamilton': 'Ferrari',
         'George Russell': 'Mercedes',
+        'Kimi Antonelli': 'Mercedes',
         'Lando Norris': 'McLaren',
         'Oscar Piastri': 'McLaren',
         'Fernando Alonso': 'Aston Martin',
         'Lance Stroll': 'Aston Martin',
-        'Daniel Ricciardo': 'RB',
         'Yuki Tsunoda': 'RB',
-        'Alexander Albon': 'Williams',
-        'Logan Sargeant': 'Williams',
-        'Valtteri Bottas': 'Kick Sauber',
-        'Zhou Guanyu': 'Kick Sauber',
-        'Kevin Magnussen': 'Haas F1 Team',
-        'Nico Hulkenberg': 'Haas F1 Team',
+        'Isack Hadjar': 'RB',
+        'Alex Albon': 'Williams',
+        'Carlos Sainz': 'Williams',
+        'Nico Hulkenberg': 'Kick Sauber',
+        'Gabriel Bortoleto': 'Kick Sauber',
+        'Esteban Ocon': 'Haas F1 Team',
+        'Oliver Bearman': 'Haas F1 Team',
         'Pierre Gasly': 'Alpine',
-        'Esteban Ocon': 'Alpine'
+        'Jack Doohan': 'Alpine'
     }
 
 def apply_performance_factors(predictions_df, base_time=89.5):
     """Apply team and driver performance factors to base lap time"""
     
-    # Team competitiveness factors (based on 2025 season so far)
+    # Team competitiveness factors (based on 2025 season expectations)
     team_factors = {
-        'Red Bull Racing': 0.997,
-        'Ferrari': 0.998,
-        'McLaren': 0.999,
+        'Red Bull Racing': 0.996,
+        'McLaren': 0.997,
+        'Ferrari': 0.997,
         'Mercedes': 0.999,
-        'Aston Martin': 1.001,
-        'RB': 1.002,
+        'Aston Martin': 1.002,
         'Williams': 1.003,
-        'Haas F1 Team': 1.004,
-        'Kick Sauber': 1.004,
-        'Alpine': 1.005,
+        'RB': 1.004,
+        'Haas F1 Team': 1.005,
+        'Alpine': 1.006,
+        'Kick Sauber': 1.007,
     }
     
     # Driver skill factors in qualifying
     driver_factors = {
-        'Max Verstappen': 0.998,
-        'Charles Leclerc': 0.999,
-        'Carlos Sainz': 0.999,
-        'Lando Norris': 0.999,
+        'Max Verstappen': 0.997,
+        'Charles Leclerc': 0.998,
+        'Lando Norris': 0.998,
+        'Lewis Hamilton': 0.999,
+        'George Russell': 0.999,
         'Oscar Piastri': 1.000,
-        'Sergio Perez': 1.000,
-        'Lewis Hamilton': 1.000,
-        'George Russell': 1.000,
         'Fernando Alonso': 1.000,
-        'Lance Stroll': 1.001,
-        'Alexander Albon': 1.001,
-        'Daniel Ricciardo': 1.001,
-        'Yuki Tsunoda': 1.002,
-        'Valtteri Bottas': 1.002,
-        'Zhou Guanyu': 1.003,
-        'Kevin Magnussen': 1.003,
+        'Carlos Sainz': 1.000,
+        'Yuki Tsunoda': 1.001,
+        'Alex Albon': 1.001,
+        'Pierre Gasly': 1.002,
+        'Liam Lawson': 1.002,
+        'Lance Stroll': 1.002,
         'Nico Hulkenberg': 1.003,
-        'Logan Sargeant': 1.004,
-        'Pierre Gasly': 1.004,
-        'Esteban Ocon': 1.004,
+        'Esteban Ocon': 1.003,
+        'Kimi Antonelli': 1.004,
+        'Jack Doohan': 1.005,
+        'Oliver Bearman': 1.005,
+        'Isack Hadjar': 1.006,
+        'Gabriel Bortoleto': 1.006,
     }
     
     for idx, row in predictions_df.iterrows():
