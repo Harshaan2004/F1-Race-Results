@@ -73,7 +73,7 @@ def get_current_driver_teams():
     """Get current F1 driver lineup for 2025"""
     return {
         'Max Verstappen': 'Red Bull Racing',
-        'Liam Lawson': 'Red Bull Racing',
+        'Yuki Tsunoda': 'Red Bull Racing',
         'Charles Leclerc': 'Ferrari',
         'Lewis Hamilton': 'Ferrari',
         'George Russell': 'Mercedes',
@@ -82,7 +82,7 @@ def get_current_driver_teams():
         'Oscar Piastri': 'McLaren',
         'Fernando Alonso': 'Aston Martin',
         'Lance Stroll': 'Aston Martin',
-        'Yuki Tsunoda': 'RB',
+        'Liam Lawson': 'RB',
         'Isack Hadjar': 'RB',
         'Alex Albon': 'Williams',
         'Carlos Sainz': 'Williams',
